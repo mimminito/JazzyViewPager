@@ -332,19 +332,6 @@ public class JazzyViewPager extends ViewPager {
 			}
 		}
 	}
-	
-	private void rotateLeftSlideRight(View left, View right, float positionOffset, int positionOffsetPixels) {
-		if (isIdle()) {
-			if (left != null) {
-				manageLayer(left, true);
-				mRot = 90.0f * positionOffset;
-				ViewHelper.setPivotX(left, 0);
-				ViewHelper.setPivotY(left, left.getMeasuredHeight()*0.5f);
-				ViewHelper.setTranslationX(left, positionOffsetPixels);
-				ViewHelper.setRotationY(left, mRot);
-			}
-		}
-	}
 
 	private void animateFlip(View left, View right, float positionOffset, int positionOffsetPixels, boolean vertical) {
 		if (isIdle()) {
@@ -511,7 +498,7 @@ public class JazzyViewPager extends ViewPager {
 			animateFlip(mLeft, mRight, positionOffset, positionOffsetPixels, true);
 			break;
 		case FlipHorizontal:
-			animateFlipHorizontal(mLeft, mRight, effectOffset, positionOffsetPixels);
+			animateFlip(mLeft, mRight, positionOffset, positionOffsetPixels, false);
 		case Stack:
 			animateStack(mLeft, mRight, effectOffset, positionOffsetPixels);
 			break;
