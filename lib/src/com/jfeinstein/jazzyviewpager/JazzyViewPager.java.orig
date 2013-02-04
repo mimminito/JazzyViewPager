@@ -42,6 +42,10 @@ public class JazzyViewPager extends ViewPager {
 		CubeOut,
 		FlipVertical,
 		FlipHorizontal,
+<<<<<<< HEAD
+		RotateLeftSlideRight,
+=======
+>>>>>>> 71f4c03d2c0c057759b8660af9563a4eaeba5d33
 		Stack,
 		ZoomIn,
 		ZoomOut,
@@ -511,7 +515,16 @@ public class JazzyViewPager extends ViewPager {
 			animateFlip(mLeft, mRight, positionOffset, positionOffsetPixels, true);
 			break;
 		case FlipHorizontal:
+			animateFlip(mLeft, mRight, effectOffset, positionOffsetPixels, false);
+			break;
+		case RotateLeftSlideRight: 
+			rotateLeftSlideRight(mLeft, mRight, positionOffset, positionOffsetPixels);
+			break;
+<<<<<<< HEAD
+=======
+		case FlipHorizontal:
 			animateFlipHorizontal(mLeft, mRight, effectOffset, positionOffsetPixels);
+>>>>>>> 71f4c03d2c0c057759b8660af9563a4eaeba5d33
 		case Stack:
 			animateStack(mLeft, mRight, effectOffset, positionOffsetPixels);
 			break;
